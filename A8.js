@@ -36,9 +36,10 @@ const { Builder, By } = require("selenium-webdriver");
         await driver.get("https://seleniumbase.io/demo_page");
         console.log("Aufgabe 8: Links finden");
 
-        const link = await driver.findElement(By.xpath("//a[@href='https://github.com/seleniumbase/SeleniumBase']"));
-
+        // const link = await driver.findElement(By.xpath("//a[@href='https://github.com/seleniumbase/SeleniumBase']"));
+        const link = await driver.findElement(By.xpath('//*[@id="myLink2"]'));
         console.log("Gefundener Link:", await link.getAttribute("href"));
+    
     } finally {
         await driver.quit();
     }
